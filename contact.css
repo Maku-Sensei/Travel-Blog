@@ -1,0 +1,351 @@
+.Main {
+    z-index: 0;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+}
+
+.ContactContainer {
+    height: 120vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-image: url("./gfx/BG_Contact.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    scroll-snap-align: center;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.ContactElements {
+    position: absolute;
+    display: block;
+    height: 55vmax;
+    width: 100%;
+    top: 0;
+}
+
+.ContactFormContainer {
+    z-index: 10;
+    height: 75%;
+    width: 50%;
+    margin: 0;
+    padding: 2vmax;
+    top: 10%;
+    left: 50%;
+    position: relative;
+    border: 0.16vmax solid rgb(18, 164, 255);
+    background-color: rgb(18, 164, 255);
+    box-shadow: 0.30vmax 0.30vmax rgba(75, 186, 255, 0.808);
+    translate: -50%;
+    animation: FadeIn 1.6s, SlideInContact 1.6s;
+}
+
+.TitleContainer {
+    height: 4vmax;
+    width: 100%;
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.TitleContainer ul{
+    list-style-type: none; 
+    box-sizing: border-box; 
+    text-wrap: nowrap; 
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.TitleContainer ul li {
+    display: inline;
+}
+
+.FormContainer {
+    margin: 1vmax 1vmax;
+    font-family: sans-serif;
+}
+
+.FormContainer form textarea {
+    z-index: 100;
+    resize: none;
+    width: 100%;
+    overflow-y: scroll;
+    outline: none;
+    padding: 0;
+    padding-left: 0.2vmax;
+    margin: 0;
+    border: 0.1vmax solid black;
+    font-size: 1.5vmax;
+}
+
+.FormContainer form textarea:nth-child(1) {
+    height: fit-content;
+    margin-bottom: 2%;
+    overflow-y: hidden;
+}
+
+.FormContainer form textarea:nth-child(2) {
+    height: 18vmax;
+    margin-bottom: 8%;
+}
+
+.FormField .TitleContainer {
+    height: auto;
+    margin-bottom: 1%;
+    text-align: start;
+    align-items: start;
+    justify-items: left;
+}
+
+.FormField .TitleContainer ul li {
+    font-size: 1.5vmax;
+}
+
+.FormField .TitleContainer ul .Blue {
+    padding-right: 1vmax;
+}
+
+.FormField input {
+    width: 40%;
+    outline: none;
+    padding: 0.1vmax 0.2vmax;
+    margin: 0;
+    margin-bottom: 6%;
+    border: 0.1vmax solid black;
+    font-size: 1.2vmax;
+}
+
+.ContactContainer .DroneLeftContainer {
+    top: 20%;
+    left: 4%;
+    width: 16vmax;
+    height: 16vmax;
+    opacity: 0;
+    animation: UpDownModified 3.5s 2.4s infinite ease-in-out, 1s 1.4s SlideInDroneLeft ease-in-out;
+}
+
+.ContactContainer .DroneRightContainer {
+    top: 50%;
+    left: 80%;
+    width: 16vmax;
+    height: 16vmax;
+    opacity: 0;
+    animation: UpDownModified 4s 2.4s infinite ease-in-out, 1s 1.4s SlideInDroneRight ease-in-out;
+}
+
+.SubmitButton {
+    position: relative;
+    display: block;
+    border: 0.1vmax solid black;
+    background-color: white;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    padding: 1.5% 3%;
+    transition: 0.4s transform ease-in-out;
+    font-size: 2vmax;
+    font-weight: 450;
+    color: rgb(0, 0, 0);
+}
+
+.SubmitButton:link, .SubmitButton:visited {
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.SubmitButton:hover {
+    outline: none;
+    box-shadow: none;
+    transform: scale(1.05); 
+    transition: 0.2s transform ease-in-out;
+    color: lightskyblue;
+}
+
+.SubmitButton:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.SubmitButton:active {
+    outline: none;
+    box-shadow: none;
+    top: 0.2vmax;
+}
+
+#PopUpAlert {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.808);
+}
+
+#PopUpAlert:target {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    animation: Visibility 10s 1s infinite, FadeIn 1s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.808);
+}
+
+#PopUpAlert:target .SubmitElements {
+    position: absolute;
+    display: block;
+    height: 55vmax;
+    width: 100vmax;
+    top: 0;
+}
+
+#PopUpAlert:target .SubmitElements .SubmitContainer {
+    z-index: 10;
+    height: 55%;
+    width: 60%;
+    margin: 0;
+    padding: 2vmax;
+    top: 10%;
+    left: 50%;
+    position: relative;
+    border: 0.16vmax solid rgb(18, 164, 255);
+    background-color: rgb(18, 164, 255);
+    box-shadow: 0.30vmax 0.30vmax rgba(75, 186, 255, 0.808);
+    translate: -50%;
+    animation: FadeIn 1.6s, SlideInContact 1.6s;
+}
+
+#PopUpAlert:target .SubmitElements .SubmitContainer .TitleContainer {
+    margin-bottom: 0;
+}
+
+#PopUpAlert:target .SubmitElements .SubmitContainer .SubTitleContainer {
+    width: 100%;
+    font-size: 2vmax;
+    text-shadow: 0.08vmax 0.08vmax 0.2vmax rgba(0, 0, 0, 0.808);
+    color: white;
+    font-style: italic;
+    height: fit-content;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 30%;
+}
+
+#PopUpAlert:target .SubmitElements .SubmitContainer .DogContainer {
+    left: 50%;
+    top: 22%;
+    translate: -50%;
+}
+
+#PopUpAlert:target .SubmitElements .SubmitContainer .SubmitButton {
+    left: 50%;
+    translate: -50%;
+}
+
+@keyframes SlideInContact {
+    0%{
+        transform: translateY(15%)
+    }
+    100%{
+        transform: translateY(0%)
+    }
+}
+
+@keyframes SlideInDroneLeft {
+    0%{
+        transform: translate(100%, 50%);
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    100%{
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+}
+
+@keyframes SlideInDroneRight {
+    0%{
+        transform: translate(-100%, 30%);
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    100%{
+        transform: translate(0%, 0%);
+        opacity: 1;
+    }
+}
+
+@keyframes FadeInDrone {
+    0%{
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes UpDownModified {
+    0%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-20%);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes Visibility {
+    from, to{
+        opacity: 1
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .ContactContainer {
+        height: 90vh;
+    }
+
+    .ContactContainer .DroneLeftContainer {
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        animation: none;
+    }
+    
+    .ContactContainer .DroneRightContainer {
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        animation: none;
+    }
+}

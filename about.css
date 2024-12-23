@@ -1,0 +1,292 @@
+.Main{
+    z-index: 0;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+}
+
+.AboutContainer {
+    height: 120vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    background-image: url("./gfx/BG_About.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    scroll-snap-align: center;
+}
+
+.AboutElements {
+    position: absolute;
+    display: block;
+    height: 55vmax;
+    width: 100%;
+    top: 0;
+}
+
+.Portrait {
+    position: absolute;
+    display: block;
+    background-image: url("./gfx/Sensei_Doodle_Icon_Flipped.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 25vmax;
+    width: 25vmax;
+    top: 34%;
+    left: 6%;
+    margin: 0;
+    padding: 0;
+    border: 0.16vmax solid black;
+    box-shadow: 0.30vmax 0.30vmax rgba(0, 0, 0, 0.708);
+    transform: rotate(-4deg);
+    animation: FadeInPortrait 3.2s, SlideInPortrait 2.4s 0.8s;
+}
+
+.NameContainer {
+    position: absolute;
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    top: 8%;
+    left: 50%;
+    margin: 0;
+    padding: 1vmax 2vmax;
+    border: 0.16vmax solid rgb(18, 164, 255);
+    transform: translateX(-50%);
+    background-color: rgb(18, 164, 255);
+    box-shadow: 0.30vmax 0.30vmax rgba(75, 186, 255, 0.808);
+    animation: FadeIn 2.4s, SlideInY 2.4s;
+}
+
+.Name {
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: .1vmax;
+    height: 4vmax;
+    width: 100%;
+    top: 0;
+}
+
+.Name ul {
+    list-style-type: none; 
+    box-sizing: border-box; 
+    text-wrap: nowrap; 
+    padding: 0;
+    margin: 0;
+    width: 100%
+}
+
+.Name ul li {
+    display: inline;
+}
+
+.LocationContainer {
+    position: absolute;
+    display: block;
+    background-image: url("./gfx/BGSkillset.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    top: 28%;
+    left: 66%;
+    width: 24vmax;
+    height: 12vmax;
+    margin: 0;
+    padding: 4% 4% 2%;
+    transform: rotate(2deg);
+    animation: FadeInSkillset 3s, SlideInSkillset 2.4s 0.6s;
+}
+
+.Location {
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2vmax;
+    letter-spacing: .1vmax;
+    height: 3vmax;
+    width: 80%;
+    top: 0;
+}
+
+.Location ul {
+    list-style-type: none; 
+    box-sizing: border-box; 
+    text-wrap: nowrap; 
+    padding: 0;
+    margin: 0;
+    width: 100%
+}
+
+.LocationContainer div:nth-child(1) ul li {
+    font-size: 2vmax;
+}
+
+.LocationContainer div:nth-child(2) ul {
+    padding: 0 0 0 3.5vmax !important;
+    margin: 0 !important;
+    width: 80%;
+}
+
+.LocationContainer div:nth-child(2) ul li {
+    font-size: 1.3vmax;
+    padding: 0;
+    margin: 0;
+}
+
+.ExtraContainer {
+    position: absolute;
+    display: block;
+    background-image: url("./gfx/BGSkillset.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    top: 60%;
+    left: 66%;
+    width: 24vmax;
+    height: 12vmax;
+    margin: 0;
+    padding: 4% 4% 2%;
+    transform: rotate(2deg);
+    animation: FadeInSkillset 3s, SlideInSkillset 2.4s 0.6s;
+}
+
+.Extra {
+    display: flex;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2vmax;
+    letter-spacing: .1vmax;
+    height: 3vmax;
+    width: 80%;
+    top: 0;
+}
+
+.Extra ul {
+    list-style-type: none; 
+    box-sizing: border-box; 
+    text-wrap: nowrap; 
+    padding: 0;
+    margin: 0;
+    width: 100%
+}
+
+.ExtraContainer div:nth-child(1) ul li {
+    font-size: 2vmax;
+}
+
+.ExtraContainer div:nth-child(2) ul {
+    padding: 0 0 0 3.5vmax !important;
+    margin: 0 !important;
+    width: 80%;
+}
+
+.ExtraContainer div:nth-child(2) ul li {
+    font-size: 1.3vmax;
+    padding: 0;
+    margin: 0;
+}
+
+.InfoContainer {
+    z-index: 100;
+    position: absolute;
+    display: block;
+    top: 23%;
+    left: 30%;
+    width: 35vmax;
+    height: auto;
+    margin: 0;
+    padding: 1vmax 2vmax;
+    font-size: 1.3vmax;
+    background-color: rgb(209, 209, 209);
+    border: 0.16vmax solid rgba(82, 82, 82, 0.808);
+    box-shadow: 0.30vmax 0.30vmax rgba(111, 111, 111, 0.808);
+    animation: FadeInBio 1.6s, SlideInBio 1.6s;
+}
+
+@keyframes SlideInPortrait {
+    0%{
+        transform: translate(15%, 5%);
+        rotate: -4deg;
+    }
+    100%{
+        transform: translateX(0%);
+        rotate: -4deg;
+    }
+}
+
+@keyframes FadeInPortrait {
+    0%{
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes SlideInSkillset {
+    0%{
+        transform: translateX(-15%);
+        rotate: 2deg;
+    }
+    100%{
+        transform: translateX(0%);
+        rotate: 2deg;
+    }
+}
+
+@keyframes FadeInSkillset {
+    0%{
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes SlideInBio {
+    0%{
+        transform: translateY(30%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes FadeInBio {
+    0%{
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .BioContainer {
+        width: 35%;
+    }
+    .AboutContainer {
+        height: 90vh;
+    }
+}

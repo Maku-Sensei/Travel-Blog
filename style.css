@@ -1,0 +1,536 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    scroll-snap-type: y proximity;
+    overflow-x: hidden;
+    scrollbar-gutter: auto;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    font-style: normal;
+    user-select: none;
+    font-weight: 550;
+}
+
+.NavigationBarContainer {
+    z-index: 1000;
+    background: rgba(20,39,59,.8);
+    background-size: 100% 100%;
+    box-shadow: 0 .15vmax 0.2vmax 0.08vmax rgba(20,39,59,.6);
+    width: 100%;
+    height: 3.4vmax;
+    top: 0;
+    position: fixed;
+}
+
+.NavigationBarContainer .NavigationBarFlexBox {
+    position: relative;
+    display: flex;
+}
+
+.NavigationBarContainer .NavigationBarFlexBox .BALogo {
+    margin-top: 0.4vmax;
+    margin-left: 44vw;
+    background-image: url("./gfx/BALogo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 7.6vmax;
+    height: 5.6vmax;
+}
+
+.NavigationBarContainer .NavigationBarFlexBox .NavigationBar {
+    display: flex;
+    list-style-type: none;
+    min-width: fit-content;
+    margin-left: 4vw;
+    margin-top: 1.2vmax;
+    padding: 0;
+    padding-left: 2vw;
+}
+
+.NavigationBarContainer .NavigationBarFlexBox .NavigationBar li {
+    padding-right: 6vw;
+    cursor: pointer;
+    color: #fff;
+    font-size: 0.8vmax;
+    font-family: sans-serif;
+    letter-spacing: 0.1vmax;
+}
+
+.NavigationBar li a {
+    display: inline-block;
+    color: #fff;
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 0.5s ease-in-out;
+    text-decoration: none;
+    text-wrap: nowrap;
+}
+
+.NavigationBar li a.active {
+    color: rgb(83, 198, 255);
+    transform: scale(1.4);
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.NavigationBar li a:hover:not(.active) {
+    color: rgb(137, 216, 255);
+    transform: scale(1.4);
+    transform-origin: center;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.Main {
+    z-index: 0;
+    max-width: 100%;
+}
+
+.PeroroContainer {
+    position: absolute;
+    display: block;
+    background-image: url("./gfx/Peroro.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 20vmax;
+    width: 20vmax;
+    scale: 1;
+    transition: 0.5s ease-in-out;
+}
+
+.PeroroContainer:hover {
+    scale: 1.1;
+    transition: 0.5s ease-in-out;
+    animation: Wiggling 2s infinite ease-in-out;
+}
+
+.DogContainer {
+    position: absolute;
+    display: block;
+    background-image: url("./gfx/img_dog.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 20vmax;
+    width: 20vmax;
+    scale: 1;
+    transition: 0.5s ease-in-out;
+}
+
+.DogContainer:hover {
+    scale: 1.1;
+    transition: 0.5s ease-in-out;
+}
+
+.ConeContainer {
+    position: absolute;
+    display: block;
+    background-image: url("./gfx/Cone.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 10vmax;
+    width: 10vmax;
+}
+
+.DroneAltLeftContainer {
+    position: absolute;
+    display: block;
+    background-image: url("./gfx/img_drone_l_alt.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 18vmax;
+    width: 18vmax;
+    animation: UpDown 2s alternate infinite ease-in-out;
+    scale: 1;
+    transition: 0.5s ease-in-out;
+}
+
+.DroneAltLeftContainer:hover {
+    scale: 1.1;
+    transition: 0.5s ease-in-out;
+}
+
+.DroneLeftContainer {
+    position: absolute;
+    display: block;
+    background-image: url("./gfx/img_drone_l.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 12vmax;
+    width: 12vmax;
+    animation: UpDown 3s 2s alternate infinite ease-in-out;
+    scale: 1;
+    transition: 0.5s ease-in-out;
+}
+
+.DroneLeftContainer:hover {
+    scale: 1.1;
+    transition: 0.5s ease-in-out;
+}
+
+.DroneRightContainer {
+    position: absolute;
+    display: block;
+    background-image: url("./gfx/img_drone_r.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 12vmax;
+    width: 12vmax;
+    animation: UpDown 3s 2s alternate infinite ease-in-out;
+    scale: 1;
+    transition: 0.5s ease-in-out;
+}
+
+.DroneRightContainer:hover {
+    scale: 1.1;
+    transition: 0.5s ease-in-out;
+}
+
+.Blue, .White {
+    font-size: 3vmax;
+    font-family: sans-serif;
+    text-align: center;
+    text-shadow: 0.12vmax 0.12vmax 0.25vmax rgba(0, 0, 0, 0.808);
+}
+
+.Blue {
+    color: rgb(111, 200, 255);
+    padding-right: 1.5vmax;
+}
+
+.White {
+    color: rgb(255, 255, 255);
+}
+
+.Emphasize span {
+    color: transparent;
+    animation: ColorChange 1s alternate infinite;
+    background-image: linear-gradient(to left, rgb(68, 160, 251), rgb(0, 134, 218));
+    background-clip: text;
+}
+
+.SplitContainer {
+    background-color: white;
+    background-image: url("./gfx/BG_Split.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 4vmax;
+    border-bottom: 0.3vmax solid white;
+    border-top: 0.3vmax solid white;
+}
+
+.SplitContainer2 {
+    background-color: white;
+    background-image: url("./gfx/BG_Split.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 4vmax;
+    border-bottom: 0.3vmax solid white;
+    border-top: 0.3vmax solid white;
+}
+
+.FooterContainer {
+    z-index: 20;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    padding-bottom: 0.6vmin !important;
+    justify-content: center;
+    padding: 2vmin 0 3vmin;
+    font-size: 0;
+    scroll-snap-align: center;
+}
+
+.Socials {
+    position: relative;
+    display: flex;
+    list-style-type: none;
+    padding-left: 3vmax;
+    margin-top: 1vmin;
+    margin-bottom: 1.4vmin;
+}
+
+.Socials li {
+    box-sizing: border-box;
+    padding-right: 3vmax;
+    color: black;
+    cursor: pointer;
+    font-size: 1.2vmax;
+    font-family: sans-serif;
+    text-align: center;
+    letter-spacing: .1vmax;
+    text-wrap: nowrap;
+}
+
+.Socials li a {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
+
+.Socials li a:hover {
+    cursor: pointer;
+    color: lightskyblue;
+}
+
+.NexonContainer {
+    background-image: url("./gfx/NexonYostar.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 8vmax;
+    width: 36vmax;
+}
+
+.Disclaimer {
+    position: absolute;
+    top: 60%;
+    left: 84%;
+    font-family: sans-serif;
+    font-size: 0.7vmax !important;
+    font-style: italic;
+    height: auto;
+    width: 16vmax;
+}
+
+@keyframes FadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes SlideIn {
+    0%{
+        transform: translate(-50%, -40%)
+    }
+    100%{
+        transform: translate(-50%, -50%)
+    }
+}
+
+@keyframes SlideInY {
+    0%{
+        transform: translate(-50%, 20%)
+    }
+    100%{
+        transform: translate(-50%, 0%);
+    }
+}
+
+@keyframes MouseAnimation {
+    0%{
+        top: 76vh;
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    100%{
+        top: 72vh;
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes Wiggling {
+    0%{
+        transform: rotate(4deg);
+    }
+    50%{
+        transform: rotate(-3deg);
+    }
+    100%{
+        transform: rotate(4deg);
+    }
+}
+
+@keyframes UpDown {
+    0%{
+        transform: translateY(0%)
+    }
+    50%{
+        transform: translateY(-20%)
+    }
+    100%{
+        transform: translateY(0%)
+    }
+}
+
+@keyframes LeftRight {
+    0%{
+        transform: translateX(0%)
+    }
+    50%{
+        transform: translateX(-20%)
+    }
+    100%{
+        transform: translateX(0%)
+    }
+}
+
+@keyframes ColorChange {
+    0%{
+        filter: hue-rotate(0deg)
+    }
+    15%{
+        filter: hue-rotate(40deg)
+    }
+    30%{
+        filter: hue-rotate(80deg)
+    }
+    45%{
+        filter: hue-rotate(120deg)
+    }
+    60%{
+        filter: hue-rotate(160deg)
+    }
+    70%{
+        filter: hue-rotate(200deg)
+    }
+    80%{
+        filter: hue-rotate(240deg)
+    }
+    90%{
+        filter: hue-rotate(280deg)
+    }
+    100%{
+        filter: hue-rotate(320deg)
+    }
+}
+
+.NavBarMobileContainer  {
+    display: none;
+}
+
+.NavBarMobileButton, .NavBarMobileButtonExit {
+    display: none;
+}
+
+@media only screen and (max-width: 480px) {
+    .NavigationBarContainer {
+        display: none;
+    }
+
+    .NavBarMobileContainer {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .NavBarMobileButton {
+        z-index: 200;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 8vmin;
+        width: 9vmin;
+        line-height: 8vmin;
+        text-align: center;
+        border: 0.2vmin solid black;
+        background-color: white;
+        color: lightskyblue;
+        text-decoration: none;
+    }
+
+    .NavBarMobileButtonExit {
+        z-index: 1000;
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 8vmin;
+        width: 9vmin;
+        line-height: 8vmin;
+        text-align: center;
+        border: 0.2vmin solid black;
+        background-color: white;
+        color: lightskyblue;
+        text-decoration: none;
+    }
+
+    #NavBarMobile {
+        z-index: 500;
+        width: 0;
+        height: 100%;
+    }
+
+    #NavBarMobile:target {
+        z-index: 500;
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding-top: 1%;
+        top: 0;
+        left: 0;
+        background-color: white;
+    }
+
+    #NavBarMobile:target .NavBarMobileButtonExit {
+        display: block;
+    }
+
+    .TitleContainerNavBar {
+        height: fit-content;
+        width: 100%;
+        position: relative;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-items: center;
+    }
+    
+    .TitleContainerNavBar ul{
+        list-style-type: none; 
+        box-sizing: border-box; 
+        text-wrap: nowrap; 
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+    
+    .TitleContainerNavBar ul li {
+        display: inline;
+        font-size: 6vmin;
+    }
+
+    .NavBarList {
+        width: 100%;
+    }
+
+    .NavigationBarMobile {
+        padding-left: 10%;
+        list-style-type: none;
+    }
+
+    .NavigationBarMobile li a {
+        display: block;
+        padding-bottom: 2vmin;
+        color: #000000;
+        text-decoration: none;
+        box-shadow: none;
+    }
+    
+    .NavigationBarMobile li a.active {
+        color: rgb(83, 198, 255);
+    }
+}

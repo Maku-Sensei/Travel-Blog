@@ -1,0 +1,368 @@
+.Main {
+    z-index: 0;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+}
+
+.BackgroundContainer {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    max-height: 100vh;
+    background-image: url("./gfx/BG_Homepage1.jpg");
+    background-position: center;
+    background-size: contain;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.BGVideo {
+    z-index: -100;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    object-fit: fill;
+    object-position: center;
+}
+
+.HomepageContainer {
+    position: absolute;
+    display: block;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    scroll-snap-align: center;
+}
+
+.LogoContainer {
+    background-image: url("./gfx/HomepageLogo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    display: block;
+    top: 35vh;
+    left: 50vw;
+    height: 60vmax;
+    width: 85vmax;
+    animation: FadeIn 2s, SlideIn 1.2s;
+    transform: translate(-50%, -50%)
+}
+
+.MouseContainer {
+    position: absolute;
+    display: block;
+    top: 72vh;
+    left: 50%;
+    height: 3%;
+    opacity: 0;
+    transform-origin: left;
+    transition: scale 1s ease-in-out;
+    transform: translate(-50%, -50%);
+    animation: MouseAnimation 1s 0.4s alternate infinite ease-in-out, FadeIn 2s 0.4s, SlideIn 1.2s 0.4s;
+}
+
+.MouseContainer:hover {
+    transform-origin: left;
+    transition: scale 0.5s ease-in-out;
+    scale: 1.2;
+}
+
+.DestinationContainer {
+    z-index: -20;
+    position: relative;
+    display: block;
+    background-color: rgb(195, 235, 255);
+    width: 100vw;
+    max-width: 100%;
+    height: 242vh;
+    border-top: 0.3vmax solid rgb(195, 235, 255);
+    border-bottom: 0.3vmax solid rgb(195, 235, 255);
+}
+
+.DestinationGrid {
+    z-index: -20;
+    position: relative;
+    display: grid;
+    row-gap: 0.3vmax;
+    grid-auto-flow: row;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 242vh;
+    overflow: hidden;
+}
+
+.Destination {
+    z-index: -15;
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: 60vh;
+    scroll-snap-align: center;
+}
+
+.DestinationBG {
+    z-index: 15;
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 60vh;
+}
+
+.DestinationGrid .Destination .DestinationBG {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: fill; 
+    left: -90vw;
+    transition: left 0.6s ease-in-out;
+}
+
+.DestinationGrid .Destination .DestinationBG:hover {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: fill; 
+    left: -88vw;
+    transition: left 0.2s ease-in-out;
+}
+
+.DestinationGrid .Destination:nth-child(1) .DestinationBG {
+    background-image: url("./gfx/BG_Homepage1.jpg");
+    background-position: bottom;
+}
+
+.DestinationGrid .Destination:nth-child(2) .DestinationBG {
+    background-image: url("./gfx/BG_Homepage2.jpg");
+}
+
+.DestinationGrid .Destination:nth-child(3) .DestinationBG {
+    background-image: url("./gfx/BG_Homepage3.jpg");
+}
+
+.DestinationGrid .Destination:nth-child(4) .DestinationBG {
+    background-image: url("./gfx/BG_Homepage4.jpg");
+}
+
+.DestinationGrid .Destination:nth-child(1).show .DestinationBG {
+    left: 0vw;
+    transition: left 0.6s ease-in-out;
+}
+
+.DestinationGrid .Destination:nth-child(2).show .DestinationBG {
+    left: 0vw;
+    transition: left 0.6s ease-in-out;
+}
+
+.DestinationGrid .Destination:nth-child(3).show .DestinationBG {
+    left: 0vw;
+    transition: left 0.6s ease-in-out;
+}
+
+.DestinationGrid .Destination:nth-child(4).show .DestinationBG {
+    left: 0vw;
+    transition: left 0.6s ease-in-out;
+}
+
+.InfoButton {
+    position: absolute;
+    display: block;
+    width: 10vw;
+    height: 60vh;
+    right: 0;
+}
+
+.InfoButton ul {
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    rotate: 90deg;
+    transform: translate(-18%, 75%);
+    list-style-type: none;
+    text-wrap: nowrap;
+}
+
+.InfoButton ul li {
+    text-align: start;
+    font-size: 3.5vw;
+    display: inline;
+}
+
+
+.ButtonFix {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.ButtonFix:hover {
+    cursor: pointer;
+}
+
+.DestinationGrid .Destination:nth-child(1) .DestinationBG .InfoButton {
+    background-color: rgb(111, 200, 255);
+}
+
+.DestinationGrid .Destination:nth-child(2) .DestinationBG .InfoButton {
+    background-color: rgb(255, 185, 111);
+}
+
+.DestinationGrid .Destination:nth-child(3) .DestinationBG .InfoButton {
+    background-color: rgb(116, 255, 111);
+}
+
+.DestinationGrid .Destination:nth-child(4) .DestinationBG .InfoButton {
+    background-color: rgb(250, 255, 111);
+}
+
+.DestinationShort {
+    z-index: 0;
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 60vh;
+}
+
+.DestionationShortTitle {
+    display: block;
+    position: absolute;
+    width: 40vw;
+    height: fit-content;
+    left: 10vw;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.DestionationShortTitle ul {
+    list-style-type: none;
+    text-wrap: nowrap;
+}
+
+.DestionationShortTitle ul li {
+    text-align: start;
+    font-size: 5vw;
+}
+
+.DestinationShortPicture {
+    position: absolute;
+    display: block;
+    width: 25vw;
+    height: 40vh;
+    left: 67vw;
+    top: 10vh;
+    transform: rotate(-4deg);
+    border: white solid 0.5vmax;
+}
+
+.DestinationGrid .Destination:nth-child(1) .DestinationShort .DestinationShortPicture {
+    background-image: url("./gfx/BG_Homepage1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-color: rgb(111, 200, 255);
+}
+
+.DestinationGrid .Destination:nth-child(2) .DestinationShort .DestinationShortPicture {
+    background-image: url("./gfx/BG_Homepage2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-color: rgb(255, 185, 111);
+}
+
+.DestinationGrid .Destination:nth-child(3) .DestinationShort .DestinationShortPicture {
+    background-image: url("./gfx/BG_Homepage3.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-color: rgb(116, 255, 111);
+}
+
+.DestinationGrid .Destination:nth-child(4) .DestinationShort .DestinationShortPicture {
+    background-image: url("./gfx/BG_Homepage4.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-color: rgb(250, 255, 111);
+}
+
+.DestinationDetails {
+    z-index: 100;
+    position: absolute;
+    display: block;
+    top: 10%;
+    left: 5%;
+    height: 67.5%;
+    width: 77.5%;
+    background-color: rgba(255, 255, 255, 0.805);
+    padding: 1.5%;
+}
+
+.DestinationDetails p {
+    z-index: 105;
+    font-size: 1.5vw;
+    margin: 0;
+    text-shadow: 0.02vmax 0.02vmax 0.06vmax rgba(0, 0, 0, 0.808);
+}
+
+.DestinationGrid .Destination:nth-child(1) .DestinationBG .DestinationDetails {
+    background-color: rgba(111, 200, 255, 0.805);
+}
+
+.DestinationGrid .Destination:nth-child(2) .DestinationBG .DestinationDetails {
+    background-color: rgba(255, 185, 111, 0.805);
+}
+
+.DestinationGrid .Destination:nth-child(3) .DestinationBG .DestinationDetails {
+    background-color: rgba(116, 255, 111, 0.805);
+}
+
+.DestinationGrid .Destination:nth-child(4) .DestinationBG .DestinationDetails {
+    background-color: rgba(250, 255, 111, 0.805);
+}
+
+.animate-on-scroll {
+    transform: translateX(100%);
+    rotate: -4deg;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+    transition-delay: 0.2s;
+}
+
+.finished-animation {
+    transform: translateX(0%);
+    rotate: -4deg;
+    opacity: 1;
+}
+
+@keyframes SlideInDestinationShort {
+    0%{
+        transform: translateX(100%);
+        rotate: -4deg;
+    }
+    100%{
+        transform: translateX(0%);
+        rotate: -4deg;
+    }
+}
+
+@keyframes FadeInDestinationShort {
+    0%{
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .IntroductionContainer {
+        height: 50vh;
+    }
+}

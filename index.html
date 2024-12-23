@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./homepage.css">
+    <link rel="icon" href="./gfx/SchaleLogo.ico">
+    <script src="./homepage.js"></script>
+</head>
+<body>
+    <header class="NavigationBarContainer">
+        <div class="NavigationBarFlexBox">
+            <ul class="NavigationBar">
+                <li><a class="active" href="./index.html">HOMEPAGE</a></li>
+                <li><a href="./about.html">ABOUT SENSEI</a></li>
+                <li><a href="./contact.html">CONTACT US</a></li>
+            </ul>
+            <div class="BALogo">
+        </div>
+    </header>
+    <div class="NavBarMobileContainer">
+        <a class="NavBarMobileButton" href="#NavBarMobile">&gt</a>
+        <div id="NavBarMobile">
+            <a class="NavBarMobileButtonExit" href="#Main">&lt</a>
+            <div class="TitleContainerNavBar">
+                <ul>
+                    <li class="Blue">NAVIGATION</li>
+                    <li class="White">BAR</li>
+                </ul>
+            </div>
+            <div class="NavBarList">
+                <ul class="NavigationBarMobile">
+                    <li><a class="active" href="./index.html">HOMEPAGE</a></li>
+                    <li><a href="./about.html">ABOUT SENSEI</a></li>
+                    <li><a href="./contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="Main" id="Main">
+        <div class="BackgroundContainer">
+            <video preload="auto" muted="muted" autoplay="autoplay" loop="loop" class="BGVideo" src="./gfx/BAVideo.mp4"></video>
+        </div>
+        <div class="HomepageContainer">
+            <div class="LogoContainer"></div>
+            <div class="MouseContainer"><a href="#Destination1"><img src="./gfx/Mouse_Scroll.png"></a></div>
+        </div>
+        <div class="SplitContainer"></div>
+        <div class="DestinationContainer">
+            <div class="DestinationGrid">
+                <div class="Destination" id="Destination1">
+                    <div class="DestinationBG">
+                        <button class="ButtonFix" onClick="Destination1Animation()"><div class="InfoButton">
+                            <ul>
+                                <li class="White" style="padding-right: 1.5vmax;">READ</li>
+                                <li class="White">MORE</li>
+                            </ul>
+                        </div></button>
+                        <div class="DestinationDetails">
+                            <p>The mysterious tower located in the heart of Kivotos. With Schale permission, visitors are allowed to enter the Sanctum tower under Sensei's supervision. The Sanctum Tower houses many facilities that allows the General Student Council to administer Kivotos in its entirety. The sight in which the Sanctum Tower looms over is a unique experience that Sensei encourages everyone to see.</p>
+                        </div>
+                    </div>
+                    <div class="DestinationShort">
+                        <div class="DestionationShortTitle">
+                            <ul>
+                                <li class="Blue">SANCTUM</li>
+                                <li class="White">TOWER</li>
+                            </ul>
+                        </div>
+                        <div class="DestinationShortPicture"></div>
+                    </div>
+                </div>
+                <div class="Destination" id="Destination2">
+                    <div class="DestinationBG">
+                        <button class="ButtonFix" onClick="Destination2Animation()"><div class="InfoButton">
+                            <ul>
+                                <li class="White" style="padding-right: 1.5vmax;">READ</li>
+                                <li class="White">MORE</li>
+                            </ul>
+                        </div></button>
+                        <div class="DestinationDetails">
+                            <p>Shiratori District is one of the most populated districts in Kivotos, many administrative faiclities are located here including the Sanctum Tower. Many tourist destinations have been built to attract students from all Kivotos and its various academies. One of the locations in particular which is the Shiratori District Amusement Park is a shining beacon of mixed culture and enjoyment, many students come here to spend time with each other despite their difference in academic affiliations.</p>
+                        </div>
+                    </div>
+                    <div class="DestinationShort">
+                        <div class="DestionationShortTitle">
+                            <ul>
+                                <li class="Blue">SHIRATORI WARD</li>
+                                <li class="White">AMUSEMENT PARK</li>
+                            </ul>
+                        </div>
+                        <div class="DestinationShortPicture"></div>
+                    </div>
+                </div>
+                <div class="Destination" id="Destination3">
+                    <div class="DestinationBG">
+                        <button class="ButtonFix" onClick="Destination3Animation()"><div class="InfoButton">
+                            <ul>
+                                <li class="White" style="padding-right: 1.5vmax;">READ</li>
+                                <li class="White">MORE</li>
+                            </ul>
+                        </div></button>
+                        <div class="DestinationDetails">
+                            <p>The largest stadium ever built in Kivotos located in Millennium. The recent success of the Halo Festival attracted many students from various academies to visit and witness one of the greatest sports tournament in history. Even after the conclusion of the Halo Festival, many would still visit to watch the various events that the Millennium Science School hosts every weekend.</p>
+                        </div>
+                    </div>
+                    <div class="DestinationShort">
+                        <div class="DestionationShortTitle">
+                            <ul>
+                                <li class="Blue">HALO FESTIVAL</li>
+                                <li class="White">STADIUM</li>
+                            </ul>
+                        </div>
+                        <div class="DestinationShortPicture"></div>
+                    </div>
+                </div>
+                <div class="Destination" id="Destination4">
+                    <div class="DestinationBG">
+                        <button class="ButtonFix" onClick="Destination4Animation()"><div class="InfoButton">
+                            <ul>
+                                <li class="White" style="padding-right: 1.5vmax;">READ</li>
+                                <li class="White">MORE</li>
+                            </ul>
+                        </div></button>
+                        <div class="DestinationDetails">
+                            <p>One of the most popular attractions in Kivotos, the Kivotos Beach Resort located near the Shiratori District and hosts various facilities intended for entertainment, luxury service and relaxation. It is also well-maintained, featuring crystal-clear waters and smooth sands for students to witness.</p>
+                        </div>
+                    </div>
+                    <div class="DestinationShort">
+                        <div class="DestionationShortTitle">
+                            <ul>
+                                <li class="Blue">KIVOTOS</li>
+                                <li class="White">BEACH RESORT</li>
+                            </ul>
+                        </div>
+                        <div class="DestinationShortPicture"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="SplitContainer2"></div>
+        <footer class="FooterContainer">
+            <div class="SocialsContainer">
+                <ul class="Socials">
+                    <li><a target="_blank" href="facebook.com">Facebook</a></li>
+                    <li><a target="_blank" href="x.com">Twitter</a></li>
+                    <li><a target="_blank" href="youtube.com">Youtube</a></li>
+                    <li><a class="NoBorder" href="./contact.html#Contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="NexonContainer"></div>
+            <div class="Disclaimer">
+                <h1>EDUCATIONAL PURPOSES AND PERSONAL USE ONLY</h1>
+            </div>
+        </footer>
+    </section>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            document.location.hash = "";
+        }
+    </script>
+</body>
+</html>
